@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mysql:
+    container_name: femi-mysql
+    image: launcher.gcr.io/google/mysql8
+    environment:
+      "MYSQL_ONETIME_PASSWORD": "yes"
+      "MYSQL_RANDOM_ROOT_PASSWORD": "yes"
+    ports:
+      - '3307:3306'
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
